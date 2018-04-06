@@ -1,38 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "bigNumber.h"
+#include "fibonacci.h"
 
-long fibonacci(long num);
-bigNumber fibonacciFor (long num);
-
-
-
+#define MAX 99999
 
 int main(){
 	long num;
+	printf("A continuação faça favor de introduzir um Long para o calculo do seu fibonacci\n");
 	scanf("%ld", &num);
-	fibonacciFor(num);
-	printlist(fibonacciFor(num));
+
+
+	printf("Este é o fibonacci recursivo que reseve um Long e retorna um Long\n \t%ld\n", fibRecursivoLong (num));
+	printf("Este é o fibonacci iterativo sem array que receve um Long e retorna um Long\n \t%ld\n", fibForLong1 (num));
+	printf("Este é o fibonacci iterativo com array que receve um Long e retorna um Long\n \t%ld\n",fibForLong2 (num));
+	printf("Este é o fibonacci iterativo com array que receve um Long e retorna um BigNumber\n \t" );
+	printlist(reverseList(bNfibFor1 (num)));
+	printf("\n");
+	printf("Este é o fibonacci iterativo sem array que receve um Long e retorna um BigNumber\n \t" );
+	printlist(reverseList(bNfibFor2(num)));
+	printf("\n");
+
+	char s[MAX];
+	printf("A continuação faça favor de introduzir um BigNumber para o calculo do seu fibonacci\n Este BigNumber deve ser introduzido como qualquer outro inteiro\n");
+	scanf("%s", s);
+	bigNumber p=leitura (s);
+	printf("Este é o fibonacci recursivo que receve um BigNumber e retorna um BigNumber\n \t" );
+	printlist(reverseList(fibRecursivoBn (p)));
+	printf("\n");
+	printf("Este é o fibonacci iterativo sem array que receve um BigNumber e retorna um BigNumber\n \t" );
+	printlist(reverseList(bNfibFor2(num)));
+	printf("\n");
 	return 0;
-}
-
-bigNumber fibonacciFor (long num){
-	bigNumber a[num];
-	if( num<=1) return newBigNumber(num,NULL);
-	else{
-		a[0]=newBigNumber(0,NULL);
-		a[1]=newBigNumber(1,NULL);
-		for (int i=2; i<=num; i++){
-			bigNumber n=somaAritmetica(a[i-2],a[i-1]);
-			a[i]=n;
-		}
-		return a[num];
-	}
-}
-
-long fibonacci(long num){
-	if(num == 0 || num==1)
-		return num;
-	else
-		return fibonacci(num-1) + fibonacci(num-2);
 }

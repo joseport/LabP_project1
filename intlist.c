@@ -2,6 +2,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+intlist reverseList(intlist lista){
+	intlist retorno=NULL;
+	while (lista!=NULL) {
+		retorno=append(newlist(head(lista),NULL),retorno);
+		lista=tail(lista);
+	}
+	return retorno;
+}
 
 intlist newlist(int h, intlist rest){
 	intlist l = malloc(sizeof(intlist));

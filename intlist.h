@@ -13,7 +13,7 @@ intlist append (intlist primeira, intlist segunda);
 int length (intlist l,int cont);
 void printlist(intlist l);
 int member(intlist l, int x);
-
+intlist reverseList(intlist lista);
 
 
 #endif
