@@ -10,7 +10,7 @@ bigNumber multAritmetica(bigNumber primeiro, bigNumber segundo);
 bigNumber newBigNumber(int h, bigNumber rest);
 bigNumber leitura (char s[]);
 int comparation(bigNumber valor1, bigNumber valor2);
-
+bigNumber divisaoAritmetica(bigNumber primeiro, bigNumber segundo);
 bigNumber multAritmeticaBnInt(bigNumber primeiro, int segundo);
 bigNumber subtracaoAritmetica(bigNumber primeiro, bigNumber segundo);
 bigNumber subtracao(bigNumber primeiro,bigNumber segundo);

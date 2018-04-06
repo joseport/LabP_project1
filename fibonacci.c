@@ -49,6 +49,7 @@ bigNumber bNfibFor2_2 (bigNumber num){
 	else{
 		anterior = newBigNumber(1,NULL);
 		anteriorDois = newBigNumber(0,NULL);
+		
 		for (bigNumber i=newBigNumber(2,NULL); comparation(i,num)<=0; somaAritmetica(i,newBigNumber(1,NULL)))
 		{
 			retorno= somaAritmetica(anterior,anteriorDois);

@@ -64,28 +64,18 @@ bigNumber somaAritmetica(bigNumber primeiro, bigNumber segundo){
 
 }
 
+
 bigNumber subtracaoAritmetica(bigNumber primeiro, bigNumber segundo){
 	int res=comparation(primeiro,segundo);
 	bigNumber retorno=NULL;
-	switch (res) {
-		case 0:
-			retorno=newBigNumber(0,NULL);
-			break;
-		case 1:
-			retorno = subtracao(primeiro,segundo);
-			break;
-		case -1:
-			retorno = subtracao(segundo,primeiro);
-		//	retorno=reverseList(retorno);
-		//	retorno = append(newBigNumber(head(retorno)*-1,NULL),tail(retorno));
-		//	retorno=reverseList(retorno);
-			break;
-		default:
-		 	printf("ERROR\n");
-			exit(-1);
-	}
+	if(res==0)
+		retorno=newBigNumber(0,NULL);
+	else
+		retorno = subtracao(primeiro,segundo);
+
 	return retorno;
 }
+
 
 
 bigNumber subtracao(bigNumber primeiro,bigNumber segundo){
@@ -130,7 +120,7 @@ bigNumber subtracao(bigNumber primeiro,bigNumber segundo){
 			s=head(segundo)-carry;
 			carry=0;
 			if (s<0){
-				s*=-1;
+				s+=10;
 				carry=1;
 			}
 
@@ -144,7 +134,7 @@ bigNumber subtracao(bigNumber primeiro,bigNumber segundo){
 			s=head(primeiro)-carry;
 			carry=0;
 			if (s<0){
-				s*=-1;
+				s+=10;
 				carry=1;
 			}
 
@@ -157,7 +147,6 @@ bigNumber subtracao(bigNumber primeiro,bigNumber segundo){
 
 	return retorno;
 }
-
 
 bigNumber multAritmeticaBnInt(bigNumber primeiro, int segundo){ //usa a soma para multiplicar
 	if (comparation(primeiro,newBigNumber(0,NULL))==0 || segundo==0 ){ //se algum deles for 0

@@ -10,7 +10,6 @@ int main(){
 	printf("A continuação faça favor de introduzir um Long para o calculo do seu fibonacci\n");
 	scanf("%ld", &num);
 
-
 	printf("Este é o fibonacci recursivo que reseve um Long e retorna um Long\n \t%ld\n", fibRecursivoLong (num));
 	printf("Este é o fibonacci iterativo sem array que receve um Long e retorna um Long\n \t%ld\n", fibForLong1 (num));
 	printf("Este é o fibonacci iterativo com array que receve um Long e retorna um Long\n \t%ld\n",fibForLong2 (num));
@@ -29,7 +28,10 @@ int main(){
 	printlist(reverseList(fibRecursivoBn (p)));
 	printf("\n");
 	printf("Este é o fibonacci iterativo sem array que receve um BigNumber e retorna um BigNumber\n \t" );
-	printlist(reverseList(bNfibFor2(num)));
+	printlist(reverseList(bNfibFor2_2(p)));
 	printf("\n");
+
+
+
 	return 0;
 }
